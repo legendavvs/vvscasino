@@ -1,0 +1,547 @@
+.body{
+    background-color: #000000;
+    font-family: Arial, serif;
+    color: #ffffff;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 100vh;
+    
+}
+.header {
+    background: rgba(60, 60, 90, 0.92);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    margin: 1.5rem auto 2rem auto;
+    box-shadow: 0 4px 24px #0003;
+    max-width: 900px;
+}
+
+.mainlabel {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #0005;
+}
+
+.nav {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav button {
+    background: #7c7cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.nav button:hover {
+    background: #5757d1;
+}
+
+.historylist {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 0 auto; /* прибрано негативний margin */
+    background: #18182e;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px #0003;
+    padding: 0.1rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.historylist h2 {
+    color: #fff700;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.history{
+    margin: -1rem;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.slots-row{
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    font-size: 5rem;
+    margin: 1rem;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;      /* як у .header */
+    margin: 1rem auto;     /* по центру */
+    gap: 0.5rem;
+    box-sizing: border-box;
+}
+
+.buttons > * {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    /* Щоб кнопки не злипалися, gap вже є у .buttons */
+}
+
+.buttonplay, .buttonmute, .restorebet, .switchmode, .buttoncount {
+    background-color: rgba(110, 110, 110, 0.603);
+    border-radius: 10px;
+    padding: 0.5rem 0.3rem;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    width: 100%; /* Кнопка займає всю ширину своєї "комірки" */
+    box-sizing: border-box;
+    height: 3.2rem;      /* Додаємо однакову висоту */
+    display: flex;       /* Центруємо текст по вертикалі */
+    align-items: center; /* Центруємо текст по вертикалі */
+    justify-content: center; /* Центруємо текст по горизонталі */
+}
+
+.betamount {
+    height: 3.2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: #22263a;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #7c7cff;
+    box-sizing: border-box;
+    width: 20%;
+    margin: 0 auto 0.5rem auto; /* відступ знизу для відділення від кнопок */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px #7c7cff33;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.betamount:focus {
+    border: 2px solid #fff700;
+    box-shadow: 0 0 10px #fff70055;
+}
+
+.betamount::-webkit-outer-spin-button,
+.betamount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.betamount[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.footer {
+    position: static;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: transparent;
+    color: #fff70079;
+    text-align: center;
+    padding: 0.7rem 0 0.5rem 0;
+    font-size: 0.9em;
+    z-index: 100;
+    box-shadow: none;
+    border: none;
+    pointer-events: none; /* Щоб не заважав клікам, якщо треба */
+}
+.footer p {
+    margin: 0;
+    pointer-events: auto;
+    font-weight: bold;
+}
+
+.addbalance{
+    display: flex;
+    align-items: center;
+    background: #232346;
+    border: 2px solid #7c7cff;
+    border-radius: 10px;
+    color: #fff700;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    margin-left: 0.3rem;
+    box-shadow: 0 2px 10px #0002;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    outline: none;
+    height: 2.8rem;
+    letter-spacing: 0.5px;
+    border-left: none; /* Щоб виглядало як одне ціле з балансом */
+}
+
+.addbalance:hover, .addbalance:focus {
+    background: #2e2e5a;
+    color: #fff;
+    border-color: #fff700;
+}
+
+.historyitem {
+    background: #232346;
+    border: 1.5px solid #7c7cff;
+    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px #0002;
+    transition: background 0.3s, color 0.3s, border 0.3s, opacity 0.7s;
+    opacity: 1;
+    word-break: break-word;
+}
+
+.historyitem-appear {
+    animation: fadeInHistory 1.2s;
+}
+
+.historyitem:not(:last-child) {
+    border-bottom: 1px solid #35357a;
+}
+
+.historyitem-empty {
+    color: #aaa;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Стилі для модального вікна поповнення балансу */
+.addbalance-modal-backdrop {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+.addbalance-modal-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.addbalance-modal {
+    background: #232346;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    min-width: 320px;
+    max-width: 95vw;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: stretch;
+    border: 2px solid #7c7cff;
+    position: relative;
+    transform: translateY(-30px) scale(0.98);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+.addbalance-modal-backdrop.show .addbalance-modal {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.addbalance-modal h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #fff700;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.addbalance-modal input[type="number"] {
+    height: 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #7c7cff;
+    background: #18182e;
+    color: #fff;
+    padding: 0 0.7rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.addbalance-modal input[type="number"]:focus {
+    border: 2px solid #fff700;
+    box-shadow: 0 0 8px #fff70055;
+}
+
+.addbalance-modal input[type="number"]::-webkit-outer-spin-button,
+.addbalance-modal input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.addbalance-modal input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.addbalance-modal .modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.addbalance-modal button {
+    flex: 1 1 0;
+    background: #7c7cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: bold;
+}
+
+.addbalance-modal button:disabled {
+    background: #444466;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.addbalance-modal button:not(:disabled):hover {
+    background: #5757d1;
+    color: #fff700;
+}
+
+.balancebox {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #232346;
+    border: 2px solid #7c7cff;
+    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff700;
+    box-shadow: 0 2px 10px #0002;
+    margin-left: 1rem;
+    margin-right: 0.3rem;
+    user-select: none;
+}
+
+
+
+.add-balance-btn {
+    background: #7c7cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 0.7rem;
+    transition: background 0.2s;
+    font-weight: bold;
+}
+.add-balance-btn:hover {
+    background: #5757d1;
+    color: #fff700;
+}
+
+.main-message {
+    width: 100%;
+    max-width: 900px;
+    margin: 1.5rem auto 1rem auto; /* збільшено нижній відступ */
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+    min-height: 2.2rem;
+    transition: color 0.3s, font-size 0.3s;
+    line-height: 1.2;
+}
+
+/* --- МОБІЛЬНИЙ ДИЗАЙН --- */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.3rem;
+        padding: 0.5rem 0.3rem;
+        margin: 0.7rem auto 1rem auto;
+        max-width: 99vw;
+        border-radius: 10px;
+    }
+    .mainlabel {
+        font-size: 1.25rem;
+        text-align: center;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.2rem;
+        word-break: break-word;
+    }
+    .nav {
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .nav button {
+        font-size: 0.98rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 7px;
+        min-width: 70px;
+        /* не на всю ширину */
+        width: auto;
+        display: inline-block;
+    }
+    .balancebox, .addbalance {
+        font-size: 1rem;
+        padding: 0.3rem 0.7rem;
+        border-radius: 8px;
+        margin: 0.1rem 0;
+        height: auto;
+        width: auto;
+        min-width: 90px;
+        max-width: 100%;
+        justify-content: center;
+        display: inline-flex;
+    }
+    .addbalance {
+        margin-left: 0;
+    }
+    .main-message {
+        font-size: 1rem;
+        min-height: 1.2rem;
+        margin: 0.7rem auto 0.5rem auto;
+        padding: 0 0.2rem;
+        max-width: 99vw;
+    }
+    .slots-row {
+        font-size: 2.7rem; /* трошки більші символи */
+        margin: 0.5rem 0;
+        gap: 0.12em;
+        flex-wrap: wrap;
+        word-break: break-all;
+        max-width: 99vw;
+    }
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        max-width: 99vw;
+        margin: 0.5rem auto;
+        width: 100%;
+        justify-content: center;
+    }
+    .buttons > * {
+        width: auto;
+        min-width: 90px;
+        max-width: 48%;
+        font-size: 1.15rem;
+        height: 2.2rem;
+        margin: 0.05rem 0.1rem;
+        display: inline-flex;
+        justify-content: center;
+    }
+    .buttonplay, .buttonmute, .restorebet, .switchmode, .buttoncount {
+        font-size: 1.15rem;
+        height: 2.2rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 8px;
+        width: auto;
+        min-width: 100px;
+        max-width: 100%;
+        display: inline-flex;
+    }
+    .betamount {
+        font-size: 1.1rem;
+        height: 2.2rem;
+        width: 100%;
+        margin-bottom: 0.3rem;
+        padding: 0 0.3rem;
+        border-radius: 8px;
+        display: inline-flex;
+    }
+    .historylist {
+        padding: 0.1rem 0.3rem 1rem 0.3rem;
+        max-width: 99vw;
+        border-radius: 10px;
+    }
+    .historylist h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    .history {
+        max-height: 120px;
+        gap: 0.3rem;
+    }
+    .historyitem {
+        font-size: 0.95rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 7px;
+    }
+    .footer {
+        
+        font-size: 0.8em;
+        padding: 0.4rem 0 0.3rem 0;
+    }
+    .addbalance-modal {
+        min-width: 98vw;
+        max-width: 99vw;
+        padding: 0.7rem 0.3rem;
+        border-radius: 10px;
+        gap: 0.7rem;
+    }
+    .addbalance-modal h3 {
+        font-size: 1.1rem;
+    }
+    .addbalance-modal input[type="number"] {
+        font-size: 1rem;
+        height: 2rem;
+        margin-bottom: 0.7rem;
+    }
+    .addbalance-modal .modal-buttons {
+        gap: 0.5rem;
+    }
+    .addbalance-modal button {
+        font-size: 0.98rem;
+        padding: 0.4rem 0.2rem;
+        border-radius: 7px;
+        min-width: 70px;
+        width: auto;
+        display: inline-block;
+    }
+}
